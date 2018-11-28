@@ -1,1 +1,2 @@
-console.log("yo")
+import { getIcon } from "./getIcon";
+export default getIcon;
