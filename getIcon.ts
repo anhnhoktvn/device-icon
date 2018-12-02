@@ -53,6 +53,6 @@ export async function getIcon(status, angle, bs, ICON_CONFIG) {
     anchor: { x: ANCHOR, y: ANCHOR },
     scaledSize: { width: DEVICE_W, height: DEVICE_H }
   };
-  cache[status + angle + bs] = result;
+  cache['' + status + angle + bs] = result;
   return result;
 }
