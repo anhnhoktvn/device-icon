@@ -3,4 +3,4 @@ export declare function getDeviceImage(status: any, angle: any, { IMAGES, ICON_S
     ICON_SIZE: any;
     IMG_W: any;
     IMG_H: any;
-}): Promise<any>;
+}): Promise<HTMLImageElement>;

@@ -31,9 +31,9 @@ export async function getDeviceImage(
   { IMAGES, ICON_SIZE, IMG_W, IMG_H },
 ) {
   const cacheKey = `${status}|${angle}|${ICON_SIZE}`
-  if (cache[cacheKey]) {
-    return cache[cacheKey]
-  }
+  // if (cache[cacheKey]) {
+  //   return cache[cacheKey]
+  // }
   const carImage = await getDataImage(status, IMAGES)
 
   canvas.width = ICON_SIZE
