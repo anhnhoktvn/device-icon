@@ -17,7 +17,7 @@ context.imageSmoothingEnabled = true
 const cache = {}
 export async function getIcon(status, angle, bs, ICON_CONFIG) {
   angle = angle % 360
-  const cacheKey = '' + status + angle + bs
+  const cacheKey = `${status}.${angle}.${bs}`
   if (cache[cacheKey]) {
     return cache[cacheKey]
   }
