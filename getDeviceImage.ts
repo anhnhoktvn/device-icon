@@ -30,8 +30,7 @@ export async function getDeviceImage(
   angle,
   { IMAGES, ICON_SIZE, IMG_W, IMG_H },
 ) {
-  angle = Math.round(angle)
-  const cacheKey = status + '|' + angle
+  const cacheKey = `${status}|${angle}|${ICON_SIZE}`
   if (cache[cacheKey]) {
     return cache[cacheKey]
   }

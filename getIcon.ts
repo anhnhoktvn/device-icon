@@ -16,8 +16,8 @@ const context = canvas.getContext('2d') as CanvasRenderingContext2D
 context.imageSmoothingEnabled = true
 const cache = {}
 export async function getIcon(status, angle, bs, ICON_CONFIG) {
-  angle = angle % 360
-  const cacheKey = `${status}.${angle}.${bs}`
+  angle = Math.round(angle || 0) % 360
+  const cacheKey = `${status}|${angle}|${bs}`
   if (cache[cacheKey]) {
     return cache[cacheKey]
   }
