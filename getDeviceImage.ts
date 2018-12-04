@@ -31,8 +31,9 @@ export async function getDeviceImage(
   { IMAGES, ICON_SIZE, IMG_W, IMG_H },
 ) {
   angle = Math.round(angle)
-  if (cache[status + angle]) {
-    return cache[status + angle]
+  const cacheKey = status + '|' + angle
+  if (cache[cacheKey]) {
+    return cache[cacheKey]
   }
   const carImage = await getDataImage(status, IMAGES)
 
@@ -56,6 +57,6 @@ export async function getDeviceImage(
   context.restore()
   const data = canvas.toDataURL()
   const result = await getImage(data)
-  cache['' + status + angle] = result
+  cache[cacheKey] = result
   return result
 }
